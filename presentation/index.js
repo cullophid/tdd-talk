@@ -53,21 +53,23 @@ const theme = createTheme(
   }
 );
 
-const Code = ({ source, lang = "graphql", textSize = 18 }) => (
-  <CodePane
-    width="400px"
-    theme="light"
-    textSize={textSize}
-    lang={lang}
-    source={source}
-  />
+const Code = ({ source, lang = "graphql", textSize = 24 }) => (
+  <Fill>
+    <CodePane
+      width="400px"
+      theme="light"
+      textSize={textSize}
+      lang={lang}
+      source={source}
+    />
+  </Fill>
 );
 
 export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["slide"]} transitionDuration={500} theme={theme}>
-        <Slide bgImage={bg2}>
+        <Slide bgImage={bg2} notes="Hello">
           <Heading
             size={1}
             textSize={72}
@@ -141,7 +143,7 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide
-          transition={["slide"]}
+          transition={["fade"]}
           bgImage={bed_double}
           presenterStyle={{
             backgroundPosition: "bottom right",
@@ -149,12 +151,9 @@ export default class Presentation extends React.Component {
             backgroundRepeat: "no-repeat"
           }}
         >
-          <Layout>
-            <Fill>
-              <Code
-                lang="javascript"
-                textSize={14}
-                source={`
+          <Code
+            lang="javascript"
+            source={`
                   {
                     reports {
                       id
@@ -168,14 +167,20 @@ export default class Presentation extends React.Component {
                     }
                   }
           `}
-              />
-            </Fill>
-            <Appear>
-              <Fill>
-                <Code
-                  textSize={14}
-                  lang="javascript"
-                  source={`
+          />
+        </Slide>
+        <Slide
+          transition={["slide"]}
+          bgImage={bed_double}
+          presenterStyle={{
+            backgroundPosition: "bottom right",
+            backgroundSize: 400,
+            backgroundRepeat: "no-repeat"
+          }}
+        >
+          <Code
+            lang="javascript"
+            source={`
                   {
                     "data": {
                       "reports" [{
@@ -190,14 +195,10 @@ export default class Presentation extends React.Component {
                     }
                   }
           `}
-                />
-              </Fill>
-            </Appear>
-          </Layout>
+          />
         </Slide>
-
         <Slide
-          transition={["slide"]}
+          transition={["fade"]}
           bgImage={chest}
           presenterStyle={{
             backgroundPosition: "bottom right",
@@ -205,10 +206,8 @@ export default class Presentation extends React.Component {
             backgroundRepeat: "no-repeat"
           }}
         >
-          <Layout>
-            <Fill>
-              <Code
-                source={`
+          <Code
+            source={`
             type Report {
               id:String!
               title:String!
@@ -218,13 +217,19 @@ export default class Presentation extends React.Component {
 
             }
           `}
-              />
-            </Fill>
-
-            <Appear>
-              <Fill>
-                <Code
-                  source={`
+          />
+        </Slide>
+        <Slide
+          transition={["fade"]}
+          bgImage={chest}
+          presenterStyle={{
+            backgroundPosition: "bottom right",
+            backgroundSize: 400,
+            backgroundRepeat: "no-repeat"
+          }}
+        >
+          <Code
+            source={`
                 type Report {
                   id:String!
                   title:String!
@@ -235,10 +240,7 @@ export default class Presentation extends React.Component {
                   
                 }
                 `}
-                />
-              </Fill>
-            </Appear>
-          </Layout>
+          />
         </Slide>
         <Slide
           transition={["slide"]}
