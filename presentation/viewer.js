@@ -20,6 +20,9 @@ export default class Viewer extends React.Component {
       this.viewer = cylindo.viewer.create(options);
     });
   }
+  componentWillUnmount() {
+    this.viewer.destroy();
+  }
   render() {
     return <div id="cylindo-viewer" />;
   }

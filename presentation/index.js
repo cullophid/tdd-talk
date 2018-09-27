@@ -21,21 +21,27 @@ import createTheme from "spectacle/lib/themes/default";
 import bg1 from "../assets/styleshot1.jpg";
 import bg2 from "../assets/styleshot2.jpg";
 import bg3 from "../assets/styleshot3.jpg";
+import bg4 from "../assets/styleshot4.jpg";
 
 import chesterfield from "../assets/chesterfield.png";
 import bed_double from "../assets/BED_DOUBLE.png";
 import branco_armchair from "../assets/BRANCO_ARMCHAIR.png";
 import chest from "../assets/CHEST.png";
 import chantel_chair from "../assets/CHANTEL_CHAIR.png";
-import archibald_chair from "../assets/ARCHIBALD_CHAIR.png";
+import ARCHIBALD_CHAIR from "../assets/ARCHIBALD_CHAIR.png";
+import BALFOUR_CHAIR from "../assets/BALFOUR_CHAIR.png";
 import churchill_table from "../assets/CHURCHILL_TABLE.png";
 import BORDEAUX_TABLE from "../assets/BORDEAUX_TABLE.png";
 import BELLINGHAM_SOFA from "../assets/BELLINGHAM_SOFA.png";
 import BARLOW_CHAIR from "../assets/BARLOW_CHAIR.png";
 import EGG_CHAIR from "../assets/EGG_CHAIR.png";
+import TOGO_SOFA from "../assets/TOGO_SOFA.png";
 
 import ddd from "../assets/ddd.jpg";
 import voyager_logo from "../assets/voyager_logo.png";
+import logo_white from "../assets/cylindo_logo_white.png";
+import logo_dark from "../assets/cylindo_logo_dark.png";
+import logo_single from "../assets/cylindo_logo_single.png";
 
 // Require CSS
 require("normalize.css");
@@ -68,20 +74,11 @@ const Code = ({ source, lang = "graphql", textSize = 24 }) => (
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck transition={["slide"]} transitionDuration={500} theme={theme}>
-        <Slide bgImage={bg2} notes="Hello">
-          <Heading
-            size={1}
-            textSize={72}
-            caps
-            lineHeight={2}
-            textColor="secondary"
-            style={{ textShadow: "1px 1px 5px black" }}
-          >
-            Cylindo.com
-          </Heading>
+      <Deck transition={["fade"]} transitionDuration={500} theme={theme}>
+        <Slide bgImage={bg2} notes="Hello" align="flex-start flex-end">
+          <Image src={logo_dark} style={{ height: 130 }} />
           <Text
-            margin="0px 0 0"
+            margin="0 0 70px 0"
             textColor="white"
             textSize={36}
             style={{ textShadow: "1px 1px 5px black" }}
@@ -89,7 +86,7 @@ export default class Presentation extends React.Component {
             <strong>Andreas Møller</strong> @cullophid
           </Text>
         </Slide>
-        <Slide>
+        <Slide transition={["fade"]}>
           <Viewer />
         </Slide>
         <Slide bgImage={bg3}>
@@ -106,7 +103,6 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
         <Slide
-          transition={["slide"]}
           bgImage={chesterfield}
           presenterStyle={{
             backgroundPosition: "bottom right",
@@ -117,7 +113,6 @@ export default class Presentation extends React.Component {
           <Image src={ddd} width={400} />
         </Slide>
         <Slide
-          transition={["slide"]}
           bgImage={BELLINGHAM_SOFA}
           presenterStyle={{
             backgroundPosition: "bottom right",
@@ -142,8 +137,8 @@ export default class Presentation extends React.Component {
           `}
           />
         </Slide>
+
         <Slide
-          transition={["fade"]}
           bgImage={bed_double}
           presenterStyle={{
             backgroundPosition: "bottom right",
@@ -169,8 +164,8 @@ export default class Presentation extends React.Component {
           `}
           />
         </Slide>
+
         <Slide
-          transition={["slide"]}
           bgImage={bed_double}
           presenterStyle={{
             backgroundPosition: "bottom right",
@@ -197,8 +192,8 @@ export default class Presentation extends React.Component {
           `}
           />
         </Slide>
+
         <Slide
-          transition={["fade"]}
           bgImage={chest}
           presenterStyle={{
             backgroundPosition: "bottom right",
@@ -219,8 +214,8 @@ export default class Presentation extends React.Component {
           `}
           />
         </Slide>
+
         <Slide
-          transition={["fade"]}
           bgImage={chest}
           presenterStyle={{
             backgroundPosition: "bottom right",
@@ -242,9 +237,9 @@ export default class Presentation extends React.Component {
                 `}
           />
         </Slide>
+
         <Slide
-          transition={["slide"]}
-          bgImage={archibald_chair}
+          bgImage={EGG_CHAIR}
           presenterStyle={{
             backgroundPosition: "bottom right",
             backgroundSize: 400,
@@ -265,7 +260,6 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide
-          transition={["slide"]}
           bgImage={chantel_chair}
           presenterStyle={{
             backgroundPosition: "bottom right",
@@ -293,7 +287,6 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide
-          transition={["slide"]}
           bgImage={BORDEAUX_TABLE}
           presenterStyle={{
             backgroundPosition: "bottom right",
@@ -301,10 +294,8 @@ export default class Presentation extends React.Component {
             backgroundRepeat: "no-repeat"
           }}
         >
-          <Layout>
-            <Fill>
-              <Code
-                source={`
+          <Code
+            source={`
             
             type Weekly = {
               dayOfWeek: Weekday!
@@ -322,12 +313,18 @@ export default class Presentation extends React.Component {
               Weekly | Monthly
             
             `}
-              />
-            </Fill>
-            <Appear>
-              <Fill>
-                <Code
-                  source={`
+          />
+        </Slide>
+        <Slide
+          bgImage={BORDEAUX_TABLE}
+          presenterStyle={{
+            backgroundPosition: "bottom right",
+            backgroundSize: 400,
+            backgroundRepeat: "no-repeat"
+          }}
+        >
+          <Code
+            source={`
             
                   type Report {
                     id:String!
@@ -340,14 +337,10 @@ export default class Presentation extends React.Component {
                   } 
             
             `}
-                />
-              </Fill>
-            </Appear>
-          </Layout>
+          />
         </Slide>
         <Slide
-          transition={["slide"]}
-          bgImage={BARLOW_CHAIR}
+          bgImage={ARCHIBALD_CHAIR}
           presenterStyle={{
             backgroundPosition: "bottom right",
             backgroundSize: 400,
@@ -360,23 +353,18 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide
-          transition={["slide"]}
-          bgImage={EGG_CHAIR}
+          bgColor="secondary"
+          bgImage={BALFOUR_CHAIR}
           presenterStyle={{
             backgroundPosition: "bottom right",
             backgroundSize: 400,
             backgroundRepeat: "no-repeat"
           }}
         >
-          <Heading
-            size={1}
-            textSize={72}
-            caps
-            lineHeight={2}
-            textColor="secondary"
-          >
-            Thank You!
+          <Heading size={1} textSize={72} caps lineHeight={2} textColor="white">
+            We are hiring!
           </Heading>
+          <Image src={logo_white} />
         </Slide>
       </Deck>
     );
