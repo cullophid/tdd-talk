@@ -10,10 +10,12 @@ export default class Viewer extends React.Component {
         containerID: "cylindo-viewer",
         country: "us",
         environmentZoom: true,
-        features: [("FABRIC COLOR", "GREY", "PILLOWS", "PILLOWS_1")],
+        features: ["FABRIC COLOR", "BLUE", "PILLOWS", "PILLOWS_1"],
         language: "eng",
-        thumbCount: 3,
-        viewerType: "2"
+        thumbCount: 4,
+        viewerType: "2",
+        fullscreen: false,
+        styleshots: false
       };
       this.viewer = cylindo.viewer.create(options);
     });
